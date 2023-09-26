@@ -63,6 +63,21 @@ $( document ).ready(function() {
 
   });
 
+
+  $('.ct').click(function(){
+
+    var curActivee = $('.side-nav').find('.is-active'),
+        curPoss = $('.side-nav').children().index(curActivee),
+        lastItemm = $('.side-nav').children().length - 2,
+        nextPoss = lastItemm;
+
+    updateNavs(lastItemm);
+    updateContent(curPoss, nextPoss, lastItemm);
+
+  });
+
+
+
   // swipe support for touch devices
   var targetElement = document.getElementById('viewport'),
       mc = new Hammer(targetElement);
